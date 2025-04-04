@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid Layout with Grid Template Areas</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-areas:
+          "item1 item2 item3 item4"
+          "item1 item2 item3 item4"
+          "item5 item5 item5 item6"
+          "item5 item5 item5 item6"
+          "item5 item5 item5 item7";
+
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 10px;
+        padding: 10px;
+        line-height: 1.7;
+        color: #161616;
+        min-block-size: 100vh;
+        min-block-size: 100dvh;
+
+      }
+      .grid-item {
+          padding: 20px;
+          text-align: none;
+
+          box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+          border-radius: 5px;
+        }
+
+      /* Styling for each grid item */
+      #item1 {
+        grid-area: item1;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+        text-align: none;
+      }
+      .warehouse,
+      .shop_today,
+      .sale_today,
+      .bank_ex {
+        box-sizing: border-box;
+        width: 100%;
+        height: 20px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .warehouse,
+      .shop_today,
+      .sale_today,
+      .bank_ex, p {
+        font-weight: 700;
+      }
+
+      #item2 {
+        grid-area: item2;
+      }
+
+      #item3 {
+        grid-area: item3;
+      }
+
+      #item4 {
+        grid-area: item4;
+      }
+
+      #item5 {
+        grid-area: item5;
+      }
+
+      #item6 {
+        grid-area: item6;
+      }
+
+      #item7 {
+        grid-area: item7;
+      }
+
+      /* Responsive Layout for Larger Screens (xl) */
+      @media screen and (max-width: 1200px) {
+        main {
+          grid-template-areas:
+            "item1 item2 item3 item4"
+            "item1 item2 item3 item4"
+            "item5 item5 item5 item6"
+            "item5 item5 item5 item6"
+            "item5 item5 item5 item7";
+          grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        }
+      }
+
+      /* For Tablet Sizes and Smaller Screens (md) */
+      @media screen and (max-width: 900px) {
+        main {
+          grid-template-areas:
+            "item1 item2 item3 "
+            "item1 item2 item3 "
+            "item4 item4 item4 "
+            "item5 item5 item5 "
+            "item5 item5 item5 "
+            "item5 item5 item5 "
+            "item6 item6 item7";
+          grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        }
+      }
+
+      /* For Small Screens (sm) */
+      @media screen and (max-width: 600px) {
+        main {
+          grid-template-areas:
+            "item1 item1"
+            "item2 item2"
+            "item3 item3"
+            "item4 item4"
+            "item5 item5"
+            "item5 item5"
+            "item5 item5"
+            "item6 item6"
+            "item7 item7";
+          grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        }
+      }
+
+      /* For Extra Small Screens (xs) */
+      @media screen and (max-width: 400px) {
+        main {
+          grid-template-areas:
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6"
+            "item7";
+          grid-template-columns: 1fr; /* 1 column */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="grid-item" id="item1">
+        <div class="body_item">
+          <div class="warehouse">
+            <p>Warehouse</p>
+            <div class="logo">&#9812;</div>
+          </div>
+          <table border="1">
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>Diesel</td>
+              <td>1</td>
+              <td>200Af</td>
+            </tr>
+            <tr>
+              <td>Gas</td>
+              <td>10</td>
+              <td>2000Af</td>
+            </tr>
+            <tr>
+              <td>Petrol</td>
+              <td>1</td>
+              <td>200Af</td>
+            </tr>
+            <tr>
+              <td>Petrol 92</td>
+              <td>10</td>
+              <td>2000Af</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="grid-item" id="item2">
+        <div class="body_item">
+          <div class="shop_today">
+            <p>Shop today</p>
+            <div class="logo">&#9812;</div>
+          </div>
+          <table border="1">
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>Diesel</td>
+              <td>1</td>
+              <td>200Af</td>
+            </tr>
+            <tr>
+              <td>Gas</td>
+              <td>10</td>
+              <td>2000Af</td>
+            </tr>
+            <tr>
+              <td>Petrol</td>
+              <td>1</td>
+              <td>200Af</td>
+            </tr>
+            <tr>
+              <td>Petrol 92</td>
+              <td>10</td>
+              <td>2000Af</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="grid-item" id="item3">
+        <div class="body_item">
+          <div class="sale_today">
+            <p>Sale today</p>
+            <div class="logo">&#9812;</div>
+          </div>
+          <table border="1">
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>Diesel</td>
+              <td>1</td>
+              <td>200Af</td>
+            </tr>
+            <tr>
+              <td>Gas</td>
+              <td>10</td>
+              <td>2000Af</td>
+            </tr>
+            <tr>
+              <td>Petrol</td>
+              <td>1</td>
+              <td>200Af</td>
+            </tr>
+            <tr>
+              <td>Petrol 92</td>
+              <td>10</td>
+              <td>2000Af</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="grid-item" id="item4">
+        <div class="body_item">
+          <div class="bank_ex">
+            <p>Bank and exchange</p>
+            <div class="logo">&#9812;</div>
+          </div>
+          <table border="1">
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+            </tr>
+            <tr>
+              <td>Diesel</td>
+
+              <td>200Af</td>
+            </tr>
+            <tr>
+              <td>Gas</td>
+
+              <td>2000Af</td>
+            </tr>
+            <tr>
+              <td>Petrol</td>
+
+              <td>200Af</td>
+            </tr>
+            <tr>
+              <td>Petrol 92</td>
+
+              <td>2000Af</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="grid-item" id="item5">5</div>
+      <div class="grid-item" id="item6">6</div>
+      <div class="grid-item" id="item7">7</div>
+    </main>
+  </body>
+</html>
+
+
+
+
+
